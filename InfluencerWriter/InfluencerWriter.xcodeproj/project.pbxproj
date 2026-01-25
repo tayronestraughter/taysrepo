@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* InfluencerWriterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* InfluencerWriterApp.swift */; };
+		A10000000000000000000003 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000004 /* Script.swift */; };
+		A10000000000000000000005 /* SampleScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000006 /* SampleScripts.swift */; };
+		A10000000000000000000007 /* LineFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000008 /* LineFormatting.swift */; };
+		A10000000000000000000009 /* ScriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000A /* ScriptStore.swift */; };
+		A1000000000000000000000B /* CloudBackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000C /* CloudBackupService.swift */; };
+		A1000000000000000000000D /* ScriptImportExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000000E /* ScriptImportExport.swift */; };
+		A1000000000000000000000F /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000010 /* RootTabView.swift */; };
+		A10000000000000000000011 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000012 /* Color+Theme.swift */; };
+		A10000000000000000000013 /* ScriptLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000014 /* ScriptLibraryView.swift */; };
+		A10000000000000000000015 /* ScriptEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000016 /* ScriptEditorView.swift */; };
+		A10000000000000000000017 /* ScriptReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000018 /* ScriptReaderView.swift */; };
+		A10000000000000000000019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000000000000000000001A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A10000000000000000000002 /* InfluencerWriterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerWriterApp.swift; sourceTree = "<group>"; };
+		A10000000000000000000004 /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		A10000000000000000000006 /* SampleScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScripts.swift; sourceTree = "<group>"; };
+		A10000000000000000000008 /* LineFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineFormatting.swift; sourceTree = "<group>"; };
+		A1000000000000000000000A /* ScriptStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptStore.swift; sourceTree = "<group>"; };
+		A1000000000000000000000C /* CloudBackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudBackupService.swift; sourceTree = "<group>"; };
+		A1000000000000000000000E /* ScriptImportExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptImportExport.swift; sourceTree = "<group>"; };
+		A10000000000000000000010 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A10000000000000000000012 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		A10000000000000000000014 /* ScriptLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptLibraryView.swift; sourceTree = "<group>"; };
+		A10000000000000000000016 /* ScriptEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptEditorView.swift; sourceTree = "<group>"; };
+		A10000000000000000000018 /* ScriptReaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptReaderView.swift; sourceTree = "<group>"; };
+		A1000000000000000000001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1000000000000000000001B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		A10000000000000000000020 /* InfluencerWriter */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000002 /* InfluencerWriterApp.swift */,
+				A10000000000000000000021 /* Models */,
+				A10000000000000000000022 /* Services */,
+				A10000000000000000000023 /* Views */,
+				A1000000000000000000001A /* Assets.xcassets */,
+				A1000000000000000000001B /* Info.plist */,
+			);
+			path = InfluencerWriter;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000021 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000004 /* Script.swift */,
+				A10000000000000000000006 /* SampleScripts.swift */,
+				A10000000000000000000008 /* LineFormatting.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000022 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1000000000000000000000A /* ScriptStore.swift */,
+				A1000000000000000000000C /* CloudBackupService.swift */,
+				A1000000000000000000000E /* ScriptImportExport.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000023 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000010 /* RootTabView.swift */,
+				A10000000000000000000012 /* Color+Theme.swift */,
+				A10000000000000000000014 /* ScriptLibraryView.swift */,
+				A10000000000000000000016 /* ScriptEditorView.swift */,
+				A10000000000000000000018 /* ScriptReaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000050 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000035 /* ScriptWave.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10000000000000000000030 /* ScriptWave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000000000000000000031 /* Build configuration list for PBXNativeTarget "ScriptWave" */;
+			buildPhases = (
+				A10000000000000000000032 /* Sources */,
+				A10000000000000000000033 /* Resources */,
+				A10000000000000000000034 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScriptWave;
+			productName = ScriptWave;
+			productReference = A10000000000000000000035 /* ScriptWave.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10000000000000000000040 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					A10000000000000000000030 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = A10000000000000000000041 /* Build configuration list for PBXProject "InfluencerWriter" */;
+			compatibilityVersion = "Xcode 15.4";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10000000000000000000020 /* InfluencerWriter */;
+			productRefGroup = A10000000000000000000050 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10000000000000000000030 /* ScriptWave */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10000000000000000000033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000019 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000000000000000000032 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10000000000000000000001 /* InfluencerWriterApp.swift in Sources */,
+				A10000000000000000000003 /* Script.swift in Sources */,
+				A10000000000000000000005 /* SampleScripts.swift in Sources */,
+				A10000000000000000000007 /* LineFormatting.swift in Sources */,
+				A10000000000000000000009 /* ScriptStore.swift in Sources */,
+				A1000000000000000000000B /* CloudBackupService.swift in Sources */,
+				A1000000000000000000000D /* ScriptImportExport.swift in Sources */,
+				A1000000000000000000000F /* RootTabView.swift in Sources */,
+				A10000000000000000000011 /* Color+Theme.swift in Sources */,
+				A10000000000000000000013 /* ScriptLibraryView.swift in Sources */,
+				A10000000000000000000015 /* ScriptEditorView.swift in Sources */,
+				A10000000000000000000017 /* ScriptReaderView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000000000000000000034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXProductReference section */
+		A10000000000000000000035 /* ScriptWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ScriptWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXProductReference section */
+
+/* Begin XCBuildConfiguration section */
+		A10000000000000000000060 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_BUILD_OBJC_ARC = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InfluencerWriter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptwave;
+				PRODUCT_NAME = ScriptWave;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = "1";
+				UIUserInterfaceStyle = Light;
+			};
+			name = Debug;
+		};
+		A10000000000000000000061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_BUILD_OBJC_ARC = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = InfluencerWriter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptwave;
+				PRODUCT_NAME = ScriptWave;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = "1";
+				UIUserInterfaceStyle = Light;
+			};
+			name = Release;
+		};
+		A10000000000000000000062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = InfluencerWriter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptwave;
+				PRODUCT_NAME = ScriptWave;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		A10000000000000000000063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = InfluencerWriter/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptwave;
+				PRODUCT_NAME = ScriptWave;
+				SWIFT_VERSION = 5.10;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A10000000000000000000041 /* Build configuration list for PBXProject "InfluencerWriter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000060 /* Debug */,
+				A10000000000000000000061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10000000000000000000031 /* Build configuration list for PBXNativeTarget "ScriptWave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000062 /* Debug */,
+				A10000000000000000000063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A10000000000000000000040 /* Project object */;
+}
