@@ -1,0 +1,20 @@
+[
+  {
+    "id": "C12C4E43-7A1C-4F3D-95B7-9BA08F6B4A01",
+    "title": "Garage Day",
+    "lines": [
+      {"id": "9E6D1A4A-4D73-4C8A-8C96-1E9E51C189B0", "type": "Scene", "text": "INT. GARAGE - DAY", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "C9D3B8C3-4B6F-4E89-AAB9-9F6C1B2B2B2C", "type": "Action", "text": "Sunlight spills across the floor. Tools hang in perfect alignment.", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "1D2E3F4A-5B6C-7D8E-9F10-111213141516", "type": "Character", "text": "BILL", "style": {"isBold": true, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "1E2F3A4B-5C6D-7E8F-9011-121314151617", "type": "Parenthesis", "text": "(smirking)", "style": {"isBold": false, "isItalic": true, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "2A3B4C5D-6E7F-8091-1011-121314151618", "type": "Dialogue", "text": "We need to see all of the facts.", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "3A4B5C6D-7E8F-9011-1213-141516171819", "type": "Character", "text": "TED", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "4A5B6C7D-8E9F-0111-1213-141516171820", "type": "Dialogue", "text": "We don't have time.", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "5A6B7C8D-9E0F-1112-1314-151617181920", "type": "Transition", "text": "CUT TO:", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "6A7B8C9D-0E1F-1213-1415-161718192021", "type": "Scene", "text": "EXT. CITY STREET - NIGHT", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}},
+      {"id": "7A8B9C0D-1E2F-1314-1516-171819202122", "type": "Action", "text": "Neon lights flicker as scooters zip past.", "style": {"isBold": false, "isItalic": false, "isUnderlined": false, "isStrikethrough": false}}
+    ],
+    "updatedAt": "2025-01-21T18:25:43Z",
+    "author": "ScriptFlow"
+  }
+]
