@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct RootTabView: View {
+    var body: some View {
+        WriteLibraryView()
     @EnvironmentObject private var store: ScriptStore
 
     var body: some View {

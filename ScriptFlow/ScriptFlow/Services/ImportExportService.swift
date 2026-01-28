@@ -105,7 +105,8 @@ final class ImportExportService {
     private func exportFDX(_ script: ScriptDocument) -> Data {
         let header = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<FinalDraft>\n<Content>\n"
         let footer = "</Content>\n</FinalDraft>\n"
-        let paragraphs = script.lines.map { line in
+        let exportLines = titlePageLines(for: script) + script.lines
+        let paragraphs = exportLines.map { line in
             let type = line.type.displayName
             let text = escapeXML(line.text)
             return "<Paragraph Type=\"\(type)\"><Text>\(text)</Text></Paragraph>"
@@ -122,7 +123,8 @@ final class ImportExportService {
             var cursorY: CGFloat = 36
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = 4
-            for line in script.lines {
+            let exportLines = titlePageLines(for: script) + script.lines
+            for line in exportLines {
                 let font = UIFont(name: "CourierPrime", size: 12) ?? UIFont.monospacedSystemFont(ofSize: 12, weight: .regular)
                 let attributes: [NSAttributedString.Key: Any] = [
                     .font: font,
@@ -142,7 +144,8 @@ final class ImportExportService {
     }
 
     private func exportDOCX(_ script: ScriptDocument) -> Data {
-        let text = script.lines
+        let exportLines = titlePageLines(for: script) + script.lines
+        let text = exportLines
             .map { $0.type.uppercase ? $0.text.uppercased() : $0.text }
             .joined(separator: "\n")
         let attributed = NSAttributedString(string: text)
@@ -162,6 +165,17 @@ final class ImportExportService {
             .replacingOccurrences(of: ">", with: "&gt;")
             .replacingOccurrences(of: "\"", with: "&quot;")
             .replacingOccurrences(of: "'", with: "&apos;")
+    }
+
+    private func titlePageLines(for script: ScriptDocument) -> [ScriptLine] {
+        var lines: [ScriptLine] = []
+        lines.append(ScriptLine(type: .text, text: script.title))
+        if let author = script.author, !author.isEmpty {
+            lines.append(ScriptLine(type: .text, text: "by \(author)"))
+        }
+        lines.append(ScriptLine(type: .text, text: ""))
+        lines.append(ScriptLine(type: .text, text: ""))
+        return lines
     }
 }
 

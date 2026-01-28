@@ -5,8 +5,6 @@ struct WriteLibraryView: View {
     @EnvironmentObject private var store: ScriptStore
     @State private var showingEditor: ScriptDocument?
     @State private var isImporting = false
-    @State private var isExporting: ScriptDocument?
-    @State private var selectedFormat: ScriptExportFormat = .fdx
 
     var body: some View {
         NavigationStack {
@@ -18,9 +16,6 @@ struct WriteLibraryView: View {
                                 showingEditor = script
                             }
                             .contextMenu {
-                                Button("Export") {
-                                    isExporting = script
-                                }
                                 Button("Delete", role: .destructive) {
                                     store.delete(script)
                                 }
@@ -77,13 +72,6 @@ struct WriteLibraryView: View {
                 ImportPickerView { url in
                     Task {
                         _ = try? await store.importScript(from: url)
-                    }
-                }
-            }
-            .sheet(item: $isExporting) { script in
-                ExportSheetView(script: script, selectedFormat: $selectedFormat) {
-                    if let url = try? store.exportScript(script, format: selectedFormat) {
-                        ShareSheet(activityItems: [url])
                     }
                 }
             }
@@ -147,41 +135,4 @@ struct ImportPickerView: UIViewControllerRepresentable {
             onPick(url)
         }
     }
-}
-
-struct ExportSheetView: View {
-    var script: ScriptDocument
-    @Binding var selectedFormat: ScriptExportFormat
-    var onExport: () -> Void
-
-    var body: some View {
-        NavigationStack {
-            Form {
-                Picker("Format", selection: $selectedFormat) {
-                    ForEach(ScriptExportFormat.allCases) { format in
-                        Text(format.displayName)
-                            .tag(format)
-                    }
-                }
-            }
-            .navigationTitle("Export \(script.title)")
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Share") {
-                        onExport()
-                    }
-                }
-            }
-        }
-    }
-}
-
-struct ShareSheet: UIViewControllerRepresentable {
-    let activityItems: [Any]
-
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-    }
-
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {}
 }

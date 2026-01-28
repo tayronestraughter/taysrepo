@@ -4,7 +4,6 @@ import SwiftUI
 @MainActor
 final class ScriptStore: ObservableObject {
     @Published private(set) var scripts: [ScriptDocument] = []
-    @Published var showWriteMode: Bool = true
 
     private let storage: ScriptStorageService
 

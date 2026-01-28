@@ -1,12 +1,16 @@
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct ScriptEditorView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var draft: ScriptDocument
     @State private var selectedLineType: ScriptLineType = .action
     @State private var selectedLineIndex: Int? = nil
-    @State private var undoStack: [[ScriptLine]] = []
-    @State private var redoStack: [[ScriptLine]] = []
+    @State private var showingFileSheet = false
+    @State private var showingExportOptions = false
+    @State private var exportURL: URL?
+    @State private var showingExporter = false
+    @State private var selectedExportFormat: ScriptExportFormat = .fdx
 
     var onSave: (ScriptDocument) -> Void
 
@@ -34,10 +38,9 @@ struct ScriptEditorView: View {
                 .padding(.vertical, 12)
             }
             Divider()
+            currentLineIndicator
             LineTypePickerView(selectedType: $selectedLineType)
                 .padding(.vertical, 8)
-            Divider()
-            formattingToolbar
         }
         .background(Color.white)
         .onAppear {
@@ -45,8 +48,27 @@ struct ScriptEditorView: View {
         }
         .onChange(of: selectedLineType) { _, newValue in
             guard let index = selectedLineIndex else { return }
-            recordUndo()
             draft.lines[index].type = newValue
+        }
+        .confirmationDialog("Export", isPresented: $showingExportOptions, titleVisibility: .visible) {
+            ForEach(ScriptExportFormat.allCases) { format in
+                Button(format.displayName) {
+                    selectedExportFormat = format
+                    prepareExport()
+                }
+            }
+        }
+        .fileExporter(
+            isPresented: $showingExporter,
+            document: ExportDocument(url: exportURL),
+            contentType: exportContentType,
+            defaultFilename: exportFilename
+        ) { _ in }
+        .sheet(isPresented: $showingFileSheet) {
+            FileDetailsSheet(title: $draft.title, author: Binding(
+                get: { draft.author ?? "" },
+                set: { draft.author = $0.isEmpty ? nil : $0 }
+            ))
         }
     }
 
@@ -61,13 +83,18 @@ struct ScriptEditorView: View {
                 }
                 Spacer()
                 TextField("Title", text: $draft.title)
-                    .font(.custom("Lato", size: 20).weight(.semibold))
+                    .font(.custom("Lato", size: 20).weight(.bold))
                     .multilineTextAlignment(.center)
                 Spacer()
-                Button {
-                    addLine()
+                Menu {
+                    Button("File") {
+                        showingFileSheet = true
+                    }
+                    Button("Export") {
+                        showingExportOptions = true
+                    }
                 } label: {
-                    Image(systemName: "plus")
+                    Image(systemName: "line.3.horizontal")
                         .font(.title3)
                 }
             }
@@ -80,65 +107,69 @@ struct ScriptEditorView: View {
         .padding(.top, 12)
     }
 
-    private var formattingToolbar: some View {
-        HStack(spacing: 20) {
-            formatButton(systemName: "bold") { toggleStyle { $0.isBold.toggle() } }
-            formatButton(systemName: "italic") { toggleStyle { $0.isItalic.toggle() } }
-            formatButton(systemName: "underline") { toggleStyle { $0.isUnderlined.toggle() } }
-            formatButton(systemName: "strikethrough") { toggleStyle { $0.isStrikethrough.toggle() } }
+    private var currentLineIndicator: some View {
+        HStack {
+            Text("Current line type: \(selectedLineType.displayName)")
+                .font(.custom("Lato", size: 12).weight(.semibold))
+                .foregroundStyle(.secondary)
             Spacer()
-            formatButton(systemName: "arrow.uturn.backward") { undo() }
-            formatButton(systemName: "arrow.uturn.forward") { redo() }
+            Button {
+                addLine()
+            } label: {
+                Image(systemName: "plus")
+                    .foregroundStyle(Color.purple)
+            }
         }
         .padding(.horizontal, 20)
-        .padding(.vertical, 12)
-        .background(Color(white: 0.95))
-    }
-
-    private func formatButton(systemName: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Image(systemName: systemName)
-                .font(.title3)
-                .foregroundStyle(Color.purple)
-        }
+        .padding(.top, 8)
     }
 
     private func addLine() {
-        recordUndo()
         let line = ScriptLine(type: selectedLineType, text: "")
         draft.lines.append(line)
         selectedLineIndex = draft.lines.count - 1
+        selectedLineType = nextLineType(after: line.type)
     }
 
-    private func toggleStyle(_ transform: (inout ScriptTextStyle) -> Void) {
-        guard let index = selectedLineIndex else { return }
-        recordUndo()
-        var line = draft.lines[index]
-        transform(&line.style)
-        draft.lines[index] = line
-    }
-
-    private func recordUndo() {
-        undoStack.append(draft.lines)
-        redoStack.removeAll()
-    }
-
-    private func undo() {
-        guard let last = undoStack.popLast() else { return }
-        redoStack.append(draft.lines)
-        draft.lines = last
-    }
-
-    private func redo() {
-        guard let last = redoStack.popLast() else { return }
-        undoStack.append(draft.lines)
-        draft.lines = last
+    private func nextLineType(after current: ScriptLineType) -> ScriptLineType {
+        switch current {
+        case .scene:
+            return .action
+        case .action:
+            return .character
+        case .character:
+            return .dialogue
+        default:
+            return .action
+        }
     }
 
     private func saveAndDismiss() {
         draft.updatedAt = Date()
         onSave(draft)
         dismiss()
+    }
+
+    private func prepareExport() {
+        let service = ImportExportService()
+        exportURL = try? service.exportScript(draft, format: selectedExportFormat)
+        showingExporter = exportURL != nil
+    }
+
+    private var exportContentType: UTType {
+        switch selectedExportFormat {
+        case .fdx:
+            return UTType(filenameExtension: "fdx") ?? .data
+        case .pdf:
+            return .pdf
+        case .docx:
+            return UTType(filenameExtension: "docx") ?? .data
+        }
+    }
+
+    private var exportFilename: String {
+        let base = draft.title.isEmpty ? "Untitled" : draft.title
+        return "\(base).\(selectedExportFormat.rawValue)"
     }
 }
 
@@ -153,9 +184,8 @@ private struct ScriptLineEditorRow: View {
                 .font(.custom("Lato", size: 10).weight(.semibold))
                 .foregroundStyle(.secondary)
                 .frame(width: 90, alignment: .leading)
-            TextField("", text: formattedBinding, axis: .vertical)
-                .font(.custom("CourierPrime", size: 16))
-                .foregroundStyle(.primary)
+            ScriptLineTextView(text: $line.text, lineType: line.type, isSelected: isSelected)
+                .frame(minHeight: 36)
                 .padding(8)
                 .background(isSelected ? Color.purple.opacity(0.1) : Color.gray.opacity(0.05))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -165,12 +195,107 @@ private struct ScriptLineEditorRow: View {
                 }
         }
     }
+}
 
-    private var formattedBinding: Binding<String> {
-        Binding(get: {
-            line.type.uppercase ? line.text.uppercased() : line.text
-        }, set: { newValue in
-            line.text = line.type.uppercase ? newValue.uppercased() : newValue
-        })
+private struct ScriptLineTextView: UIViewRepresentable {
+    @Binding var text: String
+    var lineType: ScriptLineType
+    var isSelected: Bool
+
+    func makeUIView(context: Context) -> UITextView {
+        let view = UITextView()
+        view.font = UIFont(name: "CourierPrime", size: 16) ?? UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
+        view.backgroundColor = .clear
+        view.autocorrectionType = .no
+        view.autocapitalizationType = .none
+        view.isScrollEnabled = false
+        view.delegate = context.coordinator
+        view.textContainerInset = .zero
+        view.textContainer.lineFragmentPadding = 0
+        return view
+    }
+
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        let adjustedText = lineType.uppercase ? text.uppercased() : text
+        if uiView.text != adjustedText {
+            uiView.text = adjustedText
+            if text != adjustedText {
+                text = adjustedText
+            }
+        }
+        if lineType == .parenthesis, context.coordinator.lastLineType != .parenthesis {
+            if text.isEmpty {
+                uiView.text = "()"
+                text = "()"
+                DispatchQueue.main.async {
+                    uiView.selectedRange = NSRange(location: 1, length: 0)
+                }
+            }
+        }
+        context.coordinator.lastLineType = lineType
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(text: $text)
+    }
+
+    final class Coordinator: NSObject, UITextViewDelegate {
+        @Binding var text: String
+        var lastLineType: ScriptLineType = .text
+
+        init(text: Binding<String>) {
+            _text = text
+        }
+
+        func textViewDidChange(_ textView: UITextView) {
+            text = textView.text
+        }
+    }
+}
+
+private struct FileDetailsSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Binding var title: String
+    @Binding var author: String
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Script") {
+                    TextField("Title", text: $title)
+                    TextField("Author", text: $author)
+                }
+            }
+            .navigationTitle("File")
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") {
+                        dismiss()
+                    }
+                }
+            }
+        }
+    }
+}
+
+private struct ExportDocument: FileDocument {
+    static var readableContentTypes: [UTType] { [.data] }
+
+    var url: URL?
+
+    init(url: URL?) {
+        self.url = url
+    }
+
+    init(configuration: ReadConfiguration) throws {
+        self.url = nil
+    }
+
+    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+        guard let url = url else {
+            throw CocoaError(.fileNoSuchFile)
+        }
+        let data = try Data(contentsOf: url)
+        return FileWrapper(regularFileWithContents: data)
     }
 }
