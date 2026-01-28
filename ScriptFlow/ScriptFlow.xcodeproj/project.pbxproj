@@ -10,6 +10,9 @@
 		A1B2C3D4E5F8 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F9 /* RootTabView.swift */; };
 		A1B2C3D4E5FA /* WriteLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5FB /* WriteLibraryView.swift */; };
 		A1B2C3D4E5FE /* ScriptEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5FF /* ScriptEditorView.swift */; };
+		A1B2C3D4E5FC /* ReadLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5FD /* ReadLibraryView.swift */; };
+		A1B2C3D4E5FE /* ScriptEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5FF /* ScriptEditorView.swift */; };
+		A1B2C3D4E600 /* ScriptReaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E601 /* ScriptReaderView.swift */; };
 		A1B2C3D4E602 /* ScriptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E603 /* ScriptRowView.swift */; };
 		A1B2C3D4E604 /* LineTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E605 /* LineTypePickerView.swift */; };
 		A1B2C3D4E606 /* ScriptModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E607 /* ScriptModels.swift */; };
@@ -84,9 +87,9 @@
 			children = (
 				A1B2C3D4E5F7 /* ScriptFlowApp.swift */,
 				A1B2C3D4E5F9 /* RootTabView.swift */,
-			C1C2C3D4E5FA /* Views */,
-			C1C2C3D4E606 /* Models */,
-			C1C2C3D4E60A /* Services */,
+				A1B2C3D4E5FA /* Views */,
+				A1B2C3D4E606 /* Models */,
+				A1B2C3D4E60A /* Services */,
 				A1B2C3D4E60F /* Assets.xcassets */,
 				A1B2C3D4E611 /* SampleScript.json */,
 				A1B2C3D4E612 /* Info.plist */,
@@ -111,7 +114,7 @@
 			path = ScriptFlowTests;
 			sourceTree = "<group>";
 		};
-		C1C2C3D4E5FA /* Views */ = {
+		A1B2C3D4E5FA /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E5FB /* WriteLibraryView.swift */,
@@ -122,7 +125,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C1C2C3D4E606 /* Models */ = {
+		A1B2C3D4E606 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E607 /* ScriptModels.swift */,
@@ -131,7 +134,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C1C2C3D4E60A /* Services */ = {
+		A1B2C3D4E60A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				A1B2C3D4E60B /* ScriptStorageService.swift */,
