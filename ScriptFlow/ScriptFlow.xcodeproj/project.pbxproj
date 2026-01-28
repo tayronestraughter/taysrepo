@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1B2C3D4E5F6 /* ScriptFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F7 /* ScriptFlowApp.swift */; };
+		A1B2C3D4E5F8 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F9 /* RootTabView.swift */; };
+		A1B2C3D4E5FA /* WriteLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5FB /* WriteLibraryView.swift */; };
+		A1B2C3D4E5FE /* ScriptEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5FF /* ScriptEditorView.swift */; };
+		A1B2C3D4E602 /* ScriptRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E603 /* ScriptRowView.swift */; };
+		A1B2C3D4E604 /* LineTypePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E605 /* LineTypePickerView.swift */; };
+		A1B2C3D4E606 /* ScriptModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E607 /* ScriptModels.swift */; };
+		A1B2C3D4E608 /* ScriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E609 /* ScriptStore.swift */; };
+		A1B2C3D4E60A /* ScriptStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E60B /* ScriptStorageService.swift */; };
+		A1B2C3D4E60C /* ImportExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E60D /* ImportExportService.swift */; };
+		A1B2C3D4E60E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E60F /* Assets.xcassets */; };
+		A1B2C3D4E610 /* SampleScript.json in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E611 /* SampleScript.json */; };
+		B1B2C3D4E601 /* ScriptFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B2C3D4E602 /* ScriptFlowTests.swift */; };
+		B1B2C3D4E603 /* SampleScript.json in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E611 /* SampleScript.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1B2C3D4E604 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1B2C3D4E5E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1B2C3D4E5E4;
+			remoteInfo = ScriptFlow;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1B2C3D4E5F0 /* SCRN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = SCRN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4E5F7 /* ScriptFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptFlowApp.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F9 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5FB /* WriteLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteLibraryView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5FF /* ScriptEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptEditorView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E603 /* ScriptRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRowView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E605 /* LineTypePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTypePickerView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E607 /* ScriptModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptModels.swift; sourceTree = "<group>"; };
+		A1B2C3D4E609 /* ScriptStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptStore.swift; sourceTree = "<group>"; };
+		A1B2C3D4E60B /* ScriptStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptStorageService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E60D /* ImportExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportExportService.swift; sourceTree = "<group>"; };
+		A1B2C3D4E60F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B2C3D4E611 /* SampleScript.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SampleScript.json; sourceTree = "<group>"; };
+		A1B2C3D4E612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1B2C3D4E605 /* ScriptFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptFlowTests.swift; sourceTree = "<group>"; };
+		B1B2C3D4E606 /* ScriptFlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = ScriptFlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1B2C3D4E607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B2C3D4E5E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1B2C3D4E608 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1B2C3D4E5E1 /* ScriptFlow */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5E2 /* ScriptFlow */,
+				B1B2C3D4E609 /* ScriptFlowTests */,
+				A1B2C3D4E5E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5E2 /* ScriptFlow */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F7 /* ScriptFlowApp.swift */,
+				A1B2C3D4E5F9 /* RootTabView.swift */,
+				A1B2C3D4E5FA /* Views */,
+				A1B2C3D4E606 /* Models */,
+				A1B2C3D4E60A /* Services */,
+				A1B2C3D4E60F /* Assets.xcassets */,
+				A1B2C3D4E611 /* SampleScript.json */,
+				A1B2C3D4E612 /* Info.plist */,
+			);
+			path = ScriptFlow;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5F0 /* SCRN.app */,
+				B1B2C3D4E606 /* ScriptFlowTests.xctest */,
+			);
+			sourceTree = "<group>";
+		};
+		B1B2C3D4E609 /* ScriptFlowTests */ = {
+			isa = PBXGroup;
+			children = (
+				B1B2C3D4E605 /* ScriptFlowTests.swift */,
+				B1B2C3D4E607 /* Info.plist */,
+			);
+			path = ScriptFlowTests;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E5FA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E5FB /* WriteLibraryView.swift */,
+				A1B2C3D4E5FF /* ScriptEditorView.swift */,
+				A1B2C3D4E603 /* ScriptRowView.swift */,
+				A1B2C3D4E605 /* LineTypePickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E606 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E607 /* ScriptModels.swift */,
+				A1B2C3D4E609 /* ScriptStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1B2C3D4E60A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1B2C3D4E60B /* ScriptStorageService.swift */,
+				A1B2C3D4E60D /* ImportExportService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B2C3D4E5E4 /* ScriptFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B2C3D4E5E5 /* Build configuration list for PBXNativeTarget "ScriptFlow" */;
+			buildPhases = (
+				A1B2C3D4E5E6 /* Sources */,
+				A1B2C3D4E5E7 /* Resources */,
+				A1B2C3D4E5E0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScriptFlow;
+			productName = ScriptFlow;
+			productReference = A1B2C3D4E5F0 /* SCRN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B1B2C3D4E60A /* ScriptFlowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1B2C3D4E60B /* Build configuration list for PBXNativeTarget "ScriptFlowTests" */;
+			buildPhases = (
+				B1B2C3D4E60C /* Sources */,
+				B1B2C3D4E60D /* Resources */,
+				B1B2C3D4E608 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1B2C3D4E60E /* PBXTargetDependency */,
+			);
+			name = ScriptFlowTests;
+			productName = ScriptFlowTests;
+			productReference = B1B2C3D4E606 /* ScriptFlowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B2C3D4E5E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					A1B2C3D4E5E4 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					B1B2C3D4E60A = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = A1B2C3D4E5E4;
+					};
+				};
+			};
+			buildConfigurationList = A1B2C3D4E5E9 /* Build configuration list for PBXProject "ScriptFlow" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A1B2C3D4E5E1 /* ScriptFlow */;
+			productRefGroup = A1B2C3D4E5E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B2C3D4E5E4 /* ScriptFlow */,
+				B1B2C3D4E60A /* ScriptFlowTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B2C3D4E5E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E60E /* Assets.xcassets in Resources */,
+				A1B2C3D4E610 /* SampleScript.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1B2C3D4E60D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1B2C3D4E603 /* SampleScript.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B2C3D4E5E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1B2C3D4E5F6 /* ScriptFlowApp.swift in Sources */,
+				A1B2C3D4E5F8 /* RootTabView.swift in Sources */,
+				A1B2C3D4E5FA /* WriteLibraryView.swift in Sources */,
+				A1B2C3D4E5FE /* ScriptEditorView.swift in Sources */,
+				A1B2C3D4E602 /* ScriptRowView.swift in Sources */,
+				A1B2C3D4E604 /* LineTypePickerView.swift in Sources */,
+				A1B2C3D4E606 /* ScriptModels.swift in Sources */,
+				A1B2C3D4E608 /* ScriptStore.swift in Sources */,
+				A1B2C3D4E60A /* ScriptStorageService.swift in Sources */,
+				A1B2C3D4E60C /* ImportExportService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1B2C3D4E60C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1B2C3D4E601 /* ScriptFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1B2C3D4E60E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1B2C3D4E5E4 /* ScriptFlow */;
+			targetProxy = B1B2C3D4E604 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A1B2C3D4E5EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ScriptFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptflow;
+				PRODUCT_NAME = SCRN;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ScriptFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptflow;
+				PRODUCT_NAME = SCRN;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A1B2C3D4E5EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1B2C3D4E5ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B1B2C3D4E60F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ScriptFlowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptflow.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCRN.app/SCRN";
+			};
+			name = Debug;
+		};
+		B1B2C3D4E610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ScriptFlowTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.scriptflow.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCRN.app/SCRN";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B2C3D4E5E5 /* Build configuration list for PBXNativeTarget "ScriptFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5EA /* Debug */,
+				A1B2C3D4E5EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1B2C3D4E60B /* Build configuration list for PBXNativeTarget "ScriptFlowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1B2C3D4E60F /* Debug */,
+				B1B2C3D4E610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B2C3D4E5E9 /* Build configuration list for PBXProject "ScriptFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B2C3D4E5EC /* Debug */,
+				A1B2C3D4E5ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1B2C3D4E5E8 /* Project object */;
+}
